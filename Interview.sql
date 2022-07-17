@@ -49,7 +49,7 @@ ADD CONSTRAINT region_country_pkey PRIMARY KEY (region_id, country_id);
 -- Question 6:
 -- Write a SQL statement to drop any existing foreign key from countries table
 ALTER TABLE countries
-DROP CONSTRAINT countries_fkey
+DROP CONSTRAINT countries_fkey;
 
 -- Question 7:
 -- Write a SQL statement to change the data type of the column national_anthem to text in the table locations
@@ -78,3 +78,13 @@ SET salary=
 -- and the foreign key column job_id, referenced by the column job_id of jobs table, can contain only those values which exist in the jobs table. 
 -- The specialty of the statement is that, The ON DELETE NO ACTION and the ON UPDATE NO ACTION actions will reject the deletion and any updates.
 
+CREATE TABLE employees
+(
+    employee_id integer NOT NULL,
+    first_name character varying(250) NOT NULL,
+    last_name character varying(250) NOT NULL,
+    job_id integer NOT NULL,
+    salary integer NOT NULL,
+    CONSTRAINT employee UNIQUE(employee_id),
+    CONSTRAINT fk_job FOREIGN KEY (job_id) REFERENCES jobs(job_id)
+)
