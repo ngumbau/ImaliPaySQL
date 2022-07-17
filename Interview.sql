@@ -55,7 +55,14 @@ ALTER COLUMN national_anthem TYPE TEXT;
 -- Write a SQL statement to increase the salary of employees under the department 40, 90 and 110 according to the company rules.
 -- Department 40 - 25%, Department 90 - 15%, Department 110 - 10%, and the rest ofthe departments will remain the same.
 
-
+UPDATE employees
+SET salary=
+	CASE
+		WHEN department = 40 then 1.25 * salary
+		WHEN department = 90 then 1.15 * salary
+		WHEN department = 110 then 1.10 * salary
+		ELSE salary
+	END;
 
 -- Question 9:
 -- Write a SQL statement to create a table employees including columns -- employee_id, first_name, last_name, job_id, salary
