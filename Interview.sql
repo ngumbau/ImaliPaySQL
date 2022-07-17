@@ -29,36 +29,37 @@ CREATE TABLE dup_countries
 AS TABLE countries
 
 -- Question 4:
--- Write a SQL statement to add column national_anthem (maximum 400 characters) can be empty
+-- Add column national_anthem (maximum 400 characters) can be empty
 -- Assumption - table countries (not specified in question)
 
+ALTER TABLE countries
+ADD national_anthem character varying(400);
+
 -- Question 5:
--- Write an SQL statement to add a primary key for a combination of columns
--- region_id and country_id
+-- Add a primary key for a combination of columns region_id and country_id
+-- Assumption - table countries (not specified in question)
 
 -- Question 6:
--- Write a SQL statement to drop any existing foreign key from countries
--- table
+-- Write a SQL statement to drop any existing foreign key from countries table
 
 
 -- Question 7:
--- Write a SQL statement to change the data type of the column
--- national_anthem to text in the table locations
+-- Write a SQL statement to change the data type of the column national_anthem to text in the table locations
+-- NOTE - The question states we should change the table locations but following the flow of questions above should the table be countries
+-- NOTE - Sticking with the table mentioned in the question - table locations.
+
+ALTER TABLE locations
+ALTER COLUMN national_anthem TYPE TEXT;
 
 -- Question 8:
--- Write a SQL statement to increase the salary of employees under the
--- department 40, 90 and 110 according to the company rules that, the salary
--- will be increased by 25% of the department 40, 15% for department 90 and
--- 10% of the department 110 and the rest of the department will remain
--- same
+-- Write a SQL statement to increase the salary of employees under the department 40, 90 and 110 according to the company rules.
+-- Department 40 - 25%, Department 90 - 15%, Department 110 - 10%, and the rest ofthe departments will remain the same.
+
+
 
 -- Question 9:
--- Write a SQL statement to create a table employees including columns
--- employee_id, first_name, last_name, job_id, salary and make sure that,
--- the employee_id column does not contain any duplicate value at the time
--- of insertion, and the foreign key column job_id, referenced by the column
--- job_id of jobs table, can contain only those values which exist in the jobs
--- table. The specialty of the statement is that, The ON DELETE NO ACTION
--- and the ON UPDATE NO ACTION actions will reject the deletion and any
--- updates.
+-- Write a SQL statement to create a table employees including columns -- employee_id, first_name, last_name, job_id, salary
+-- Make sure that the employee_id column does not contain any duplicate value at the time of insertion, 
+-- and the foreign key column job_id, referenced by the column job_id of jobs table, can contain only those values which exist in the jobs table. 
+-- The specialty of the statement is that, The ON DELETE NO ACTION and the ON UPDATE NO ACTION actions will reject the deletion and any updates.
 
