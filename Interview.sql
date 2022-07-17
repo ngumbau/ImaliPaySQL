@@ -9,11 +9,12 @@ CREATE TABLE IF NOT EXISTS countries
     PRIMARY KEY (country_id)
 );
 
+
 CREATE TABLE regions
 (
     region_id integer NOT NULL,
     region_name character varying(250) NOT NULL,
-    PRIMARY KEY (region_id)   
+    PRIMARY KEY (region_id)
 );
 
 -- Question 2: Insert rows from the country_new table to countries table
@@ -28,8 +29,8 @@ CREATE TABLE dup_countries
 AS TABLE countries
 
 -- Question 4:
--- Write a SQL statement to add column national_anthem (maximum 400
--- characters) can be empty
+-- Write a SQL statement to add column national_anthem (maximum 400 characters) can be empty
+-- Assumption - table countries (not specified in question)
 
 -- Question 5:
 -- Write an SQL statement to add a primary key for a combination of columns
