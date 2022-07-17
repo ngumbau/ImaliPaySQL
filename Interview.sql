@@ -1,6 +1,6 @@
--- Question 1:
--- Create simple tables countries and regions.
+-- Question 1: Create simple tables countries and regions.
 -- Countries table includes columns country_id, country_name and region_id which already exist.
+
 CREATE TABLE IF NOT EXISTS countries
 (
     country_id character varying(50) NOT NULL,
@@ -16,9 +16,10 @@ CREATE TABLE regions
     PRIMARY KEY (region_id)   
 );
 
--- Question 2:
--- Write a SQL statement insert rows from the country_new table to countries
--- table
+-- Question 2: Insert rows from the country_new table to countries table
+
+INSERT INTO countries
+SELECT * FROM country_new
 
 -- Question 3:
 -- Write a SQL statement to create a duplicate copy of countries table
