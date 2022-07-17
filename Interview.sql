@@ -37,11 +37,19 @@ ADD national_anthem character varying(400);
 
 -- Question 5:
 -- Add a primary key for a combination of columns region_id and country_id
--- Assumption - table countries (not specified in question)
+-- Assumption - table countries (not specified in question), both region_id and country_id cannot be NULL
+-- Note - Primary Key countries_pkey must be dropped first.
+
+ALTER TABLE countries
+DROP CONSTRAINT countries_pkey;
+
+ALTER TABLE countries
+ADD CONSTRAINT region_country_pkey PRIMARY KEY (region_id, country_id);
 
 -- Question 6:
 -- Write a SQL statement to drop any existing foreign key from countries table
-
+ALTER TABLE countries
+DROP CONSTRAINT countries_fkey
 
 -- Question 7:
 -- Write a SQL statement to change the data type of the column national_anthem to text in the table locations
