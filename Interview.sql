@@ -22,8 +22,10 @@ INSERT INTO countries
 SELECT * FROM country_new
 
 -- Question 3:
--- Write a SQL statement to create a duplicate copy of countries table
--- including structure and data by name dup_countries
+-- Create a duplicate copy of countries table including structure and data by name dup_countries
+
+CREATE TABLE dup_countries
+AS TABLE countries
 
 -- Question 4:
 -- Write a SQL statement to add column national_anthem (maximum 400
